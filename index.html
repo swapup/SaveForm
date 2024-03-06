@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Forms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link type="text/css" rel="stylesheet" href="css\style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+   <script type="text/javascript">
+   </script>
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+     
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+   <style>
+.hlabelfield{
+    text-align: center;
+    color: aliceblue;
+    text-align: center;
+}
+.rightmenu::-webkit-scrollbar-thumb{
+  scrollbar-width: thin;
+  scrollbar-
+}
+body{
+  min-height: 100vh;
+}
+
+
+  .sidebar{
+    position: fixed;
+    top:0;
+    left:0;
+    width:70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+   /* background: linear-gradient(-45deg, #571845, #c70039);*/
+   background: rgba(124, 123, 123, 0.26);
+   backdrop-filter: blur(10px);
+   border-radius: 15px;
+   margin: 5px 5px 5px 5px;
+   margin-bottom: 20px;
+}
+::-webkit-scrollbar{
+  width: 0px;
+}
+::-webkit-scrollbar-thumb{background: white; display: none;}
+.sidebar header{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+.sidebar header button{
+  border: 3px solid white;
+  background: rgba(125, 128, 127, 0.22);
+}
+.sidebar footer{
+  text-align: center;
+  padding-bottom: 10px;
+
+}
+.sidebar footer a{
+
+}
+.navbtn{
+         
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border-color: antiquewhite;
+    border: none;
+    cursor: pointer;
+    position: sticky;
+    top:0;
+    left:10px;
+  }
+  .navbtn .fa-bars
+  {
+    position:relative;
+    font-size: large;
+  }
+  .navelement{
+    text-decoration: none;
+    float: left;
+    height: 100%;
+    margin-top: 0;
+    z-index: 2;
+    overflow: scroll;
+  }
+  .navul{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    overflow: scroll;
+    
+
+  }
+  .navelement ul {
+    list-style: none;
+    margin: 0;
+    margin-left:-35px;
+    overflow: auto;
+    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+  .navelement ul li{
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 10%;
+    background: rgba(125, 128, 127, 0.22);
+    backdrop-filter: blur(3.4px);
+    border-radius: 6px;
+    border: 3px solid white;
+    color:aliceblue;
+  }
+  .navelement ul li a {
+    text-align: center;
+    text-decoration: none;
+    left: 0;
+    margin-top: 2%;
+  }
+  .navelement ul li:hover{
+    color:rgb(5, 5, 2);
+  }
+  .navelement ul li a .title{
+    font-size: smaller;
+    color:black;
+  }
+  .navelement ul li a .icon{
+font-size: large;
+padding-top: 1px;
+color:rgb(80, 80, 80);
+
+}
+.container{
+    border: 2px solid;
+    height: 100%;
+}
+.home-section{
+    position: relative;
+    height: 100vh;
+    left: 260px;
+    width: calc(100% - 0px);
+    transition: all 0.5s ease;
+    z-index: inherit;
+    margin-top: -10px;
+}
+.header{
+
+    border: 1px solid black;
+    justify-content: center;
+    margin-left:50px;
+}
+
+.homesection{
+    border-radius: 15px;
+    border:2PX solid rgb(191, 219, 236);
+    height: 100%;
+    background: rgba(207, 248, 255, 0.1);
+    height: 730px;
+    width: 95.3%;
+    margin-left: 4.5%;
+}
+/*navigation hovereffect div Style*/
+.hovereffect{
+  border: 2px solid rgb(255, 255, 255);   
+/*  display: none;*/
+  position:fixed;
+  display : none;
+  background: rgba(79, 84, 82, 0.22);
+  height: 80vh;left: 70px; width :157px; 
+  border-radius: 10px;
+}
+.hovereffect header{
+  font-size: medium;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  margin-left: 0 ;
+  margin-top: 1%;
+  padding-top: 8%;
+}
+.homesection .inputfield{
+  margin-left: 10%;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 3px 3px 3px 3px;
+  background: rgba(226, 224, 224, 0.22);
+  width: 200px;
+}
+.hovereffect .insidenav a {
+  display: block;
+  padding: 3px;
+  font-size: small;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+}
+.btnclick{
+  background: rgba(20, 37, 191, 0.22);
+  border-radius: 8px;
+  border: 1px solid blue;
+  size: 10px;
+  text-size-adjust: 10px;
+  color:white;
+  cursor: pointer;
+  margin-left: 10%;
+  padding: 3px 3px 3px 3px;
+
+
+
+ 
+}
+
+
+.error{color:red}
+.width70{
+width:20%;
+padding-bottom:1%;
+padding-left:4%;
+}
+.width100{
+width:25%;
+padding-bottom:0%;
+padding-right:10%;
+}
+.formclass{
+padding-left:1%;
+padding-right:1%;
+padding-top:2rem;
+}
+.listheader{
+	text-align:center;
+	border-left-width: 1rem;
+	padding-left:1%;
+	border:0px;
+	
+}
+.listgroup{
+text-align:center;
+	padding-left:10%;
+	
+	
+}
+.buttongroup{
+padding-left:1%;
+padding-right:1%;
+}
+.button_group{
+	text-align:right;
+
+	padding-left:10%;
+	
+}
+.tablefield{
+	width:100%;
+	color:red;
+}
+
+.onclicktable{
+	color:black;
+	height:100%;width:100%;
+}
+.right-align{
+	right:auto;
+	position: sticky;
+	position: -webkit-sticky;
+  left: 0;
+  top: 0;	
+  color:red;
+}
+
+   </style>
+   <script>
+   $(document).ready( function () {
+       $('#myTable').DataTable();
+   } );
+   
+   </script>
+</head>
+
+<body>
+</div>
+<!--<nav class="sidebar" id="sidebar">
+    <header><button id="navbtn" class="navbtn" onclick="opennav()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </header>
+<div class="navelement">
+<ul class="navul" id="navul">
+    <li><a href="#" onclick="openhoverffect('navll1',1);" id="navll1"><div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div><div class="title">Module 1</div></a></li>
+    <li><a href="#" onclick="openhoverffect('navll2',2)" id="navll2"><div class="icon"><i class="fa fa-life-ring" aria-hidden="true"></i></div><div class="title">Module 2</div></a></li>
+    <li><a href="#" onclick="openhoverffect('navll3')" id="navll3"><div class="icon"><i class="fa fa-folder" aria-hidden="true"></i></div><div class="title">Test2</div></a></li>
+    <li><a href="#" onclick="openhoverffect('navll4')" id="navll4"><div class="icon"><i class="fa fa-gift" aria-hidden="true"></i></div><div class="title">Test3</div></a></li>
+    <li><a href="#" onclick="openhoverffect('navll5')" id="navll5"><div class="icon"><i class="fa fa-hand-peace-o" aria-hidden="true"></i></div><div class="title">Test4</div></a></li>
+    <li><a href="#" onclick="openhoverffect('navll6')" id="navll6"><div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div><div class="title">Test5</div></a></li>
+</ul>
+</a><div class="hovereffect" id="hovereffect">
+    <nav class="effectnav">
+    <header id="modulehead"> Module Name</header>
+    <div class="insidenav" id="insidenav">
+    <a href="#">list</a>
+    <a href="#">Add User</a>
+    <a href="#">Add Source Managment</a>
+    <a href="#">TablefromAPI</a>
+    <a href="#">Ajax SQL Output Example</a>
+    </div>
+</div>
+</div>
+<footer><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+</footer>
+</nav>  -->
+<div class="homesection" id="homesection">
+    <input type="text" class="inputfield">
+    <br>
+    <button onclick="openmoduletest1()" class="btnclick">Save</button>
+    <div class="container">
+        <div class="listgroup"><a class="listheader">Save Forms </a> 
+        </div>
+        <div class="button_group">
+        <input class="buttongroup" type="button" value="+" onclick="genraterow('saveform')"/>
+       <input class="buttongroup" type="button" value="-" onclick="deleteRows('saveform')"/>
+       </div>
+        <table class="table" id="saveform_Table">
+            <thead>
+            <input type="hidden" id="saveform_Fields_Count" value="5"/>
+                <th style="position: sticky;top:0;">
+                    <th>cloud id</th>
+                    <th>Forms ID</th>
+                    <th>Company Name</th>
+                    <th>Save Form</th>
+                    <th>Action</th>
+                </th>
+                </thead>
+                    <tbody>
+
+
+                    </tbody>
+    </div>
+    <button id="myBtn">Open Popup</button>
+
+   
+    
+
+</div>  
+<script>
+    const sidemenujson = JSON.parse(`{"result":[{"srno":1,"modulename":"Configuration","forms":[{"id":1,"formname":"Forms","modulename":"Configuration","reqpath":"Forms"},{"id":3,"formname":"Fields","modulename":"Configuration","reqpath":"Fields"}]}, 
+{"srno":2,"modulename":"Product","forms":[{"id":2,"formname":"ProductConfig","modulename":"Product","reqpath":"ProductConfig"},{"id":5,"formname":"Product","modulename":"Product","reqpath":"product"}]}, 
+{"srno":3,"modulename":"User","forms":[{"id":4,"formname":"Users","modulename":"User","reqpath":"users"}]}]}`);
+function opennav(){ 
+    document.getElementById("sidebar").style.width = "233px";
+    document.getElementById("homesection").style.width="84.5%";
+    document.getElementById("homesection").style.marginLeft="15.3%";
+    document.getElementById("hovereffect").style.display="flex";
+    document.getElementById("navbtn").setAttribute('onclick',  'closenav()');
+}
+function closenav(){
+    document.getElementById("sidebar").style.width = "70px";
+    document.getElementById("homesection").style.width="95.3%";
+    document.getElementById("homesection").style.marginLeft="4.5%";
+    document.getElementById("hovereffect").style.display="none";
+    document.getElementById("navbtn").setAttribute('onclick',  'opennav()');
+}
+function openhoverffect(liid){
+    console.log("liid"+liid);
+    refid=liid;
+    /*document.getElementById("homesection").style.width="84%";
+    document.getElementById("homesection").style.margin.left="18.5%";*/
+    document.getElementById("hovereffect").style.display="flex";
+    var lilenght=document.getElementById("navul").children.length;
+    for(var i=1;i<=lilenght;i++){
+        var refliid = "navll"+i;
+        document.getElementById(refliid).setAttribute('onclick', "openhoverffect('"+refliid+"'"+i+")");
+}
+    document.getElementById(refid).setAttribute('onclick', "closehovereffect('"+refid+"')");
+}
+function closehovereffect(liid){
+    refid=liid;
+    document.getElementById("hovereffect").style.display="none";
+    var lilenght=document.getElementById("navul").children.length;
+
+    for(var i=1;i<=lilenght;i++){
+        var refliid = "navll"+i;
+        document.getElementById(refliid).setAttribute('onclick', "openhoverffect('"+refliid+"',"+i+")");
+}
+document.getElementById("sidebar").style.width = "70px";
+    document.getElementById("homesection").style.width="95.3%";
+    document.getElementById("homesection").style.marginLeft="4.5%";
+    document.getElementById("hovereffect").style.display="none";
+    document.getElementById("navbtn").setAttribute('onclick',  'opennav()');
+
+
+}
+function openmoduletest1(){
+  console.log(sidemenujson);
+  lm = sidemenujson.sidemenu.length;
+  modulesjson=sidemenujson.result;
+  console.log(lm);
+  for(var m=0;m<lm;m++){
+  console.log("Module "+m+" "+modulesjson[m].modulename);
+  modules = modulesjson[m].modulename;
+  modulesforms = modulesjson[m].forms;
+  console.log(modulesforms);
+  mf = modulesforms.length;
+  for(var f=0;f<mf;f++){
+    console.log(modulesforms[f]);
+    form = modulesforms[f].form;
+    formname = modulesforms[f].formname;
+    reqName = modulesforms[f].reqName;
+    console.log('<a href="'+reqName+'">"'+formname+'</a>');
+  }
+
+  }
+
+}
+function openhoverffect(liid,mid)
+{
+    ja = mid-1;
+    console.log(sidemenujson);
+
+    modulesjson=sidemenujson.result;
+    modules = modulesjson[ja].modulename;
+    modulesforms = modulesjson[ja].forms;
+    mf = modulesforms.length;
+    document.getElementById('insidenav').innerHTML ="";
+    document.getElementById('modulehead').innerHTML="";
+    document.getElementById('modulehead').innerHTML =modulesjson[ja].modulename;
+    for(var f=0;f<mf;f++){
+    console.log(modulesforms[f]);
+    form = modulesforms[f].form;
+    formname = modulesforms[f].formname;
+    reqName = modulesforms[f].reqName;
+    formlist ='<a href="'+reqName+'">'+formname+'</a>';
+    console.log('<a href="'+reqName+'">'+formname+'</a>');
+    document.getElementById('insidenav').innerHTML +=formlist;
+  }
+  refid=liid;
+    /*document.getElementById("homesection").style.width="84%";
+    document.getElementById("homesection").style.margin.left="18.5%";*/
+    document.getElementById("hovereffect").style.display="flex";
+    var lilenght=document.getElementById("navul").children.length;
+    for(var i=1;i<=lilenght;i++){
+        var refliid = "navll"+i;
+        document.getElementById(refliid).setAttribute('onclick', "openhoverffect('"+refliid+"',"+i+")");
+}
+    document.getElementById(refid).setAttribute('onclick', "closehovereffect('"+refid+"')");
+
+    document.getElementById("navbtn").setAttribute('onclick',  'closenav()');
+
+}
+/**
+ * 
+ */
+
+function genraterow(lastlistname){
+	
+	console.log(lastlistname);
+	var listname=lastlistname;
+	console.log(lastlistname+"_Table");
+	var table=document.getElementById(lastlistname+"_Table");	console.log(lastlistname+"_Fields_Count");
+	var fieldscount=document.getElementById(lastlistname+"_Table").getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+    var newcellcount = fieldscount;
+	let fieldsjson = `{"customerMoreDetails":[{"type":"srno","fieldname":"srno","fieldtype":"label","defaultvalue":"1","class":"srno"},
+	{"type":"input","fieldname":"CloudName","fieldtype":"text","defaultvalue":"","class":"inputfield"},
+	{"type":"input","fieldname":"formid","fieldtype":"text","defaultvalue":"","class":"inputfield"},
+    {"type":"input","fieldname":"companyname","fieldtype":"text","defaultvalue":"","class":"inputfield"},
+    {"type":"button","fieldname":"Save Forms","fieldtype":"button","defaultvalue":"","class":"btnclick","onclick":"saveForm('cloudNo, CloudName, companyname, formid',this)"},
+    {"type":"listbuttongroup","fieldname":"listbuttongroup","fieldtype":"text","defaultvalue":"","class":"inputfield"}]}`;
+	console.log(fieldsjson);
+	var rowCount = table.rows.length;
+	const jsondata = JSON.parse(fieldsjson);
+    jsonfields=jsondata.customerMoreDetails;
+    jsonfieldscount=jsondata.customerMoreDetails.length;
+    console.log("table obj "+table);
+    console.log(jsonfieldscount+"Data"+jsonfields);
+	console.log(jsondata);
+    var tbodyRef = document.getElementById(lastlistname+"_Table").getElementsByTagName('tbody')[0];
+    var newRow = tbodyRef.insertRow();
+
+    var myTbody = document.querySelector(lastlistname+"_Table>tbody")
+	for(var i =0;i<jsonfieldscount;i++){
+		var cell = 'cell'+i;
+		cell = newRow.insertCell();
+        var type=jsonfields[i].type;
+		var fieldname = jsonfields[i].fieldname;
+		var fieldtype = jsonfields[i].fieldtype;
+	    var fielddefaultvalue = jsonfields[i].defaultvalue;
+        var classvalue = jsonfields[i].class;
+        console.log("newcellval field type "+jsonfields[i].fieldtype);
+
+		console.log("field : "+fieldname+" fieldtype : "+fieldtype+" fielddefaultvalue : "+fielddefaultvalue);
+		console.log("Fields Creation : ");
+		if(type=="input"){
+		var newcellval ='<input id="'+
+		fieldname+"_"+newcellcount+'" type="'+fieldtype+'" name="'+lastlistname+'['+newcellcount+'].'+fieldname+'" class="'+classvalue+'" value="'+fielddefaultvalue+'">';
+		console.log('<input id="'+fieldname+"_"+newcellcount+'" name="'+lastlistname+'['+newcellcount+'].'+fieldname+'" value="'+fielddefaultvalue+'">');
+
+		}
+		else if(type=="srno"){
+			var srno=++newcellcount;
+			newcellval='<label>'+srno+'</label>';
+		}
+		else if(type=="listbuttongroup"){
+			
+			var functionlistname="'"+lastlistname+"'";
+			var addrowbtn='<input type="button" class="rowplus" value="+" onclick="'+'genraterow('+functionlistname+')"/>';
+			console.log("Add row Function row Wise : "+addrowbtn);
+			
+			var removerowbtn='<input type="button" class="rowminus" value="-" onclick="deleterow('+functionlistname+",'"+rowCount+"'"+')"/>';
+			console.log("Remove Row Funcyion Row Wise :"+removerowbtn);
+			newcellval=addrowbtn+" "+removerowbtn;
+			//<input type="button" value="-" onclick="deleterow('customerMoreDetails','${status.count}')"/>
+
+		}
+        else if(type=="button"){
+            console.log("inside button Attribute ");
+            newcellval='<input type="button" class="'+classvalue+'" value="'+fieldname+'" onclick="saveForm('+newcellcount+')"/>';
+            console.log(newcellval);
+        }
+	
+		cell.innerHTML=newcellval;
+
+	}
+
+	
+}
+
+ 
+ 
+
+function deleteRows(tablename){
+	var table = document.getElementById(tablename+"_Table");
+	var rowCount = table.rows.length;
+	if(rowCount > '2'){
+		var row = table.deleteRow(rowCount-1);
+		rowCount--;
+	}
+	else{
+		alert('There should be atleast one row');
+	}
+}
+
+function deleterow(tablename,rownumber){
+	var table = document.getElementById(tablename+"_Table");
+	var rowCount = document.getElementById(tablename+"_Table").getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+	console.log(rowCount);
+	var row = table.deleteRow(rownumber);	
+}
+
+var request = new XMLHttpRequest();
+	
+function RequestSqldata(reqfield,reqname,reqprctype){
+	var name="Swapnil";
+	var v=2;
+	var url=reqname;
+	//var url="requestAjax?name="+name+"&val="+v;
+    contentType: "application/json; charset=utf-8",
+	request.open('GET',url)
+	request.onload= function(){
+		var reqdata=request.responseText;
+		Processdata(reqfield,reqdata);
+	};
+	request.send();
+	
+}
+
+function requrl(urlval){
+	var v=2;
+	var url=urlval;
+	//var url="requestAjax?name="+name+"&val="+v;
+    contentType: "application/json; charset=utf-8",
+	request.open('GET',url)
+	request.onload= function(){
+		var reqdata=request.responseText;
+        console.log(reqdata);
+
+	};
+	request.send();
+}
+function saveForm(rowno){
+  cloudno = document.getElementById('CloudName_'+rowno).value;
+  formid = document.getElementById('formid_'+rowno).value;
+  nameofcompany =document.getElementById('companyname_'+rowno).value;
+ var urlstring = 'https://'+cloudno+'.strategicerpcloud.com/strategicerp/otplogin.do?actn=saveform&formid='+formid+'&cloudcode='+nameofcompany;
+ console.log("url String "+urlstring);
+ 
+ requrl(urlstring);
+ alert('Forms Save For cloud '+cloudno+' form '+formid+' for company name '+nameofcompany);
+}
+/*
+$("tr").click(function () {
+    alert(this.rowIndex); 
+ });*/
+
+ function checkrowval(valofrow){
+    console.log("vale of row "+valofrow);
+    console.log(document.getElementById(valofrow+"_Table").getElementsByTagName("tbody")[0].rowCount);
+ }
+ genraterow('saveform');
+ </script>
+</body>
+</html>
+
+
